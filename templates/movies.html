@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section>
+        <div class="container px-4 px-lg-5">
+            <h1 class="text-center p-4">List of Movies</h1>
+
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+             {% for movie in movies %}
+                <div class="col mb-5">
+                    <a href="{{ url_for('movie_details', movie_id=movie[0]) }}">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="{{ movie[3] }}" alt="{{ movie[1] }}" height="300px"/>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">{{ movie[1] }}</h5>
+                                    <p> Movie ID: {{ movie[0] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}
+
+

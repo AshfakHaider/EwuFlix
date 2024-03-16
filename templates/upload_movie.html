@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Movie</title>
+</head>
+<body>
+    <h1>Upload a Movie</h1>
+    <form method="POST" action="/upload_movie" enctype="multipart/form-data">
+        <label for="title">Movie Title:</label>
+        <input type="text" name="title" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" rows="4" required></textarea><br><br>
+
+        <label for="image">Upload Movie Poster:</label>
+        <input type="file" name="image" accept=".jpg, .jpeg, .png" required><br><br>
+
+        <input type="submit" value="Upload Movie">
+    </form>
+</body>
+</html>
